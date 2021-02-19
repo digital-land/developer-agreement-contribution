@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+  <head>
+    <meta charset="utf-8">
+    <title> | Digital Land</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c">     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="shortcut icon" sizes="48x48" href="/images/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
+      <link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
+      <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <meta name="dl-template" content="dlf-base.html">	<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />
+<script src="https://digital-land.github.io/javascripts/dl-maps.js"></script>
+    <meta property="og:image" content="/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body ">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+<!-- Cookie banner partial version 1.0.1 -->
+<div id="global-cookie-message" class="govuk-clearfix global-cookie-message" data-module="cookie-banner" role="region" aria-label="cookie banner" data-nosnippet="">
+
+  <div id="cookie-banner" class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="cookie-banner__message govuk-!-margin-top-6">
+          <h2 class="govuk-heading-m">Tell us whether you accept cookies</h2>
+          <p class="govuk-body">We use <a class="govuk-link" href="/cookies">cookies to collect information</a> about how you use the Digital Land website to make the website work as well as possible.</p>
+        </div>
+        <div class="cooke-banner__buttons govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <button class="govuk-button" onclick="acceptCookies();showCookieConfirmation();">Accept all cookies</button>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <a class="govuk-button" href="/cookies">Set cookie preferences</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookie-confirmation" class="govuk-width-container govuk-!-padding-top-6" tabindex="-1" style="display: none;">
+    <p class="cookie-banner__confirmation-message govuk-body">You’ve accepted all cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
+    <button class="cookie-banner__hide-button govuk-button govuk-button--secondary" onclick="document.getElementById('cookie-confirmation').style.display='none';">Hide</button>
+  </div>
+
+</div><header role="banner" id="global-header" class="govuk-header  with-proposition dl-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="header-proposition">
+      <div class="govuk-header__content">
+        <a href="https://digital-land.github.io/" class="govuk-header__link govuk-header__link--service-name">
+        Digital Land
+        </a>
+        <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>        <nav>
+          <ul id="navigation" class="govuk-header__navigation" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/about">Team</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/project/">Projects</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/weeknote/">Weeknotes</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/blog-post/">Blog</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/guidance/">Guidance</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/dataset/">Datasets</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/organisation/">Organisations</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/map/">Map</a>
+            </li>
+          </ul>
+        </nav>
+</div>
+    </div>
+  </div>
+</header>
+
+      <div class="govuk-width-container ">
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  prototype
+</strong><span class="govuk-phase-banner__text">
+      This is a prototype. Please provide feedback to the Digital Land team.
+    </span>
+  </p>
+</div><div class="govuk-breadcrumbs ">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">Digital Land</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../">Developer Agreement Contribution</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../">Local Authority Eng</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">ERY</li>
+  </ol>
+</div>        <main class="govuk-main-wrapper " id="main-content" role="main">
+
+<h1 class="govuk-heading-xl"></h1>
+
+    <form class="filter-organisations-list__form govuk-!-margin-bottom-9" data-filter="form">
+        <label class="filter-list__label govuk-label govuk-!-font-weight-bold" for="filter-organisations-list">I'm looking for</label>
+        <input class="filter-list__input govuk-input" type="text" id="filter-organisations-list" placeholder="For example, Harrogate Borough Council">
+    </form>
+    <div class="js-no-filter-list-matches"><p class="govuk-body">No matches.</p></div> <!-- needs to go outside of index-list-wrapper -->
+
+    <div class="index-list-wrapper">
+            <div class="count-wrapper">
+                <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">147</span> records.</p>
+                <p class="govuk-visually-hidden">There are
+                    <span class="js-accessible-list-count">147</span>
+                    records listed.
+                </p>
+            </div>
+
+            <table class="dl-index-list" data-filter="list">
+  <tbody><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS222-affordable-housing-off-site" data-filter="match-content">IFS222/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS654-affordable-housing-off-site" data-filter="match-content">IFS654/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS654-affordable-housing-on-site" data-filter="match-content">IFS654/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS654-open-space-and-leisure-off-site" data-filter="match-content">IFS654/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS654-open-space-and-leisure-on-site" data-filter="match-content">IFS654/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS654-other-pspo" data-filter="match-content">IFS654/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS655-affordable-housing-on-site" data-filter="match-content">IFS655/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS655-education" data-filter="match-content">IFS655/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS655-open-space-and-leisure-off-site" data-filter="match-content">IFS655/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS656-other-to-retain-land-in-same-ownership" data-filter="match-content">IFS656_other_to-retain-land-in-same-ownership</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS657-affordable-housing-off-site" data-filter="match-content">IFS657/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS657-affordable-housing-on-site" data-filter="match-content">IFS657/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS657-open-space-and-leisure-off-site" data-filter="match-content">IFS657/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS658-affordable-housing-on-site" data-filter="match-content">IFS658/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS658-green-infrastructure-landscaping" data-filter="match-content">IFS658/green-infrastructure_landscaping</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS658-open-space-and-leisure-off-site-1" data-filter="match-content">IFS658/open-space-and-leisure_off-site-1</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS658-open-space-and-leisure-off-site-2" data-filter="match-content">IFS658/open-space-and-leisure_off-site-2</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS658-open-space-and-leisure-on-site" data-filter="match-content">IFS658/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS659-affordable-housing-on-site" data-filter="match-content">IFS659/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS659-open-space-and-leisure-off-site" data-filter="match-content">IFS659/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS659-open-space-and-leisure-on-site" data-filter="match-content">IFS659/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS659-other-pspo" data-filter="match-content">IFS659_other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS660-affordable-housing-on-site" data-filter="match-content">IFS660/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS660-education" data-filter="match-content">IFS660/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS660-open-space-and-leisure-on-site" data-filter="match-content">IFS660/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS660-other-pspo" data-filter="match-content">IFS660_other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS661-affordable-housing-off-site" data-filter="match-content">IFS661/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS661-affordable-housing-on-site" data-filter="match-content">IFS661/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS661-open-space-and-leisure-off-site" data-filter="match-content">IFS661/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS662-affordable-housing-off-site" data-filter="match-content">IFS662/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS662-affordable-housing-on-site" data-filter="match-content">IFS662/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS662-open-space-and-leisure-off-site" data-filter="match-content">IFS662/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS662-open-space-and-leisure-on-site" data-filter="match-content">IFS662/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS663-affordable-housing-on-site" data-filter="match-content">IFS663/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS663-highways-tro" data-filter="match-content">IFS663/highways_tro</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS663-open-space-and-leisure-off-site" data-filter="match-content">IFS663/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS664-affordable-housing-off-site" data-filter="match-content">IFS664/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS665-affordable-housing-off-site" data-filter="match-content">IFS665/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS665-affordable-housing-on-site" data-filter="match-content">IFS665/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS665-open-space-and-leisure-off-site" data-filter="match-content">IFS665/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS665-open-space-and-leisure-on-site" data-filter="match-content">IFS665/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS665-other-pspo" data-filter="match-content">IFS665_other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS666-affordable-housing-off-site" data-filter="match-content">IFS666/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS666-open-space-and-leisure-off-site" data-filter="match-content">IFS666/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS667-affordable-housing-on-site" data-filter="match-content">IFS667/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS667-open-space-and-leisure-off-site" data-filter="match-content">IFS667/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS667-open-space-and-leisure-on-site" data-filter="match-content">IFS667/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS670-open-space-and-leisure-off-site" data-filter="match-content">IFS670/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS670-open-space-and-leisure-on-site" data-filter="match-content">IFS670/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS671-affordable-housing-off-site" data-filter="match-content">IFS671/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS671-affordable-housing-on-site" data-filter="match-content">IFS671/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS671-education" data-filter="match-content">IFS671/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS671-highways-improvement" data-filter="match-content">IFS671/highways-improvement</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS671-open-space-and-leisure-off-site" data-filter="match-content">IFS671/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS672-affordable-housing-off-site" data-filter="match-content">IFS672/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS672-affordable-housing-on-site" data-filter="match-content">IFS672/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS672-highways-tro" data-filter="match-content">IFS672/highways-tro</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS672-open-space-and-leisure-off-site" data-filter="match-content">IFS672/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS672-open-space-and-leisure-on-site" data-filter="match-content">IFS672/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-affordable-housing-off-site" data-filter="match-content">IFS673/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-affordable-housing-on-site" data-filter="match-content">IFS673/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-highways-improvement" data-filter="match-content">IFS673/highways-improvement</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-highways-management" data-filter="match-content">IFS673/highways-management</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-open-space-and-leisure-off-site" data-filter="match-content">IFS673/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-open-space-and-leisure-on-site" data-filter="match-content">IFS673/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-other-pspo" data-filter="match-content">IFS673/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-transport-bus-stop" data-filter="match-content">IFS673/transport-bus-stop</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS673-transport-public-transport" data-filter="match-content">IFS673/transport-public-transport</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-affordable-housing-off-site" data-filter="match-content">IFS675/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-affordable-housing-on-site" data-filter="match-content">IFS675/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-education" data-filter="match-content">IFS675/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-open-space-and-leisure-off-site" data-filter="match-content">IFS675/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-open-space-and-leisure-on-site" data-filter="match-content">IFS675/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-highways-footbridge-contribution" data-filter="match-content">IFS675_highways_footbridge-contribution</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-highways-improvement" data-filter="match-content">IFS675_highways_improvement</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS675-highways-link-road" data-filter="match-content">IFS675_highways_link-road</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS676-education" data-filter="match-content">IFS676/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS677-affordable-housing-on-site" data-filter="match-content">IFS677/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS677-open-space-and-leisure-off-site" data-filter="match-content">IFS677/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS677-open-space-and-leisure-on-site" data-filter="match-content">IFS677/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS677-other-pspo" data-filter="match-content">IFS677/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS679-affordable-housing-off-site" data-filter="match-content">IFS679/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS679-affordable-housing-on-site" data-filter="match-content">IFS679/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS679-open-space-and-leisure-off-site" data-filter="match-content">IFS679/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS679-open-space-and-leisure-on-site" data-filter="match-content">IFS679/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS679-other-pspo" data-filter="match-content">IFS679/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS680-affordable-housing-on-site" data-filter="match-content">IFS680/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS680-education" data-filter="match-content">IFS680/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS680-open-space-and-leisure-off-site" data-filter="match-content">IFS680/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS680-open-space-and-leisure-on-site" data-filter="match-content">IFS680/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS680-other-pspo" data-filter="match-content">IFS680/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS681-open-space-and-leisure-off-site" data-filter="match-content">IFS681/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS683-affordable-housing-off-site" data-filter="match-content">IFS683/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS683-affordable-housing-on-site" data-filter="match-content">IFS683/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS683-open-space-and-leisure-off-site" data-filter="match-content">IFS683/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS683-open-space-and-leisure-on-site" data-filter="match-content">IFS683/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-affordable-housing-off-site" data-filter="match-content">IFS685/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-affordable-housing-on-site" data-filter="match-content">IFS685/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-education" data-filter="match-content">IFS685/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-open-space-and-leisure-off-site-1" data-filter="match-content">IFS685/open-space-and-leisure_off-site-1</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-open-space-and-leisure-off-site-2" data-filter="match-content">IFS685/open-space-and-leisure_off-site-2</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-open-space-and-leisure-on-site" data-filter="match-content">IFS685/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS685-other-pspo" data-filter="match-content">IFS685/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-affordable-housing-off-site" data-filter="match-content">IFS686/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-affordable-housing-on-site" data-filter="match-content">IFS686/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-education" data-filter="match-content">IFS686/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-open-space-and-leisure-off-site" data-filter="match-content">IFS686/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-open-space-and-leisure-on-site" data-filter="match-content">IFS686/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS686-other-pspo" data-filter="match-content">IFS686/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-affordable-housing-off-site" data-filter="match-content">IFS687/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-affordable-housing-on-site" data-filter="match-content">IFS687/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-education" data-filter="match-content">IFS687/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-highways-improvement" data-filter="match-content">IFS687/highways_improvement</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-open-space-and-leisure-off-site" data-filter="match-content">IFS687/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-open-space-and-leisure-on-site" data-filter="match-content">IFS687/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS687-other-pspo" data-filter="match-content">IFS687/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS688-affordable-housing-on-site" data-filter="match-content">IFS688/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS688-education" data-filter="match-content">IFS688/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS688-open-space-and-leisure-off-site" data-filter="match-content">IFS688/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS688-open-space-and-leisure-on-site" data-filter="match-content">IFS688/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS688-other-pspo" data-filter="match-content">IFS688/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS689-open-space-and-leisure-off-site" data-filter="match-content">IFS689/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS689-open-space-and-leisure-on-site" data-filter="match-content">IFS689/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS690-affordable-housing-off-site" data-filter="match-content">IFS690/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS690-open-space-and-leisure-off-site" data-filter="match-content">IFS690/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS691-affordable-housing-off-site" data-filter="match-content">IFS691/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS691-open-space-and-leisure-off-site" data-filter="match-content">IFS691/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS692-affordable-housing-off-site" data-filter="match-content">IFS692/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS692-affordable-housing-on-site" data-filter="match-content">IFS692/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS692-open-space-and-leisure-off-site" data-filter="match-content">IFS692/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS693-affordable-housing-off-site" data-filter="match-content">IFS693/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS693-affordable-housing-on-site" data-filter="match-content">IFS693/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS693-open-space-and-leisure-off-site" data-filter="match-content">IFS693/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS694-affordable-housing-on-site" data-filter="match-content">IFS694/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS695-open-space-and-leisure-off-site" data-filter="match-content">IFS695/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS696-affordable-housing-off-site" data-filter="match-content">IFS696/affordable-housing_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS696-affordable-housing-on-site" data-filter="match-content">IFS696/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS696-open-space-and-leisure-off-site" data-filter="match-content">IFS696/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS696-open-space-and-leisure-on-site" data-filter="match-content">IFS696/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS696-other-pspo" data-filter="match-content">IFS696/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS698-affordable-housing-on-site" data-filter="match-content">IFS698/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS698-education" data-filter="match-content">IFS698/education</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS698-open-space-and-leisure-off-site" data-filter="match-content">IFS698/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS699-affordable-housing-on-site" data-filter="match-content">IFS699/affordable-housing_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS699-open-space-and-leisure-off-site" data-filter="match-content">IFS699/open-space-and-leisure_off-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS699-open-space-and-leisure-on-site" data-filter="match-content">IFS699/open-space-and-leisure_on-site</a></h4>
+  </td>
+  <td>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./IFS699-other-pspo" data-filter="match-content">IFS699/other_pspo</a></h4>
+  </td>
+  <td>
+  </td>
+</tr></tbody>
+</table>
+
+
+    </div>
+
+        </main>
+      </div>
+
+
+<footer class="govuk-footer " role="contentinfo"
+>
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>              <ul class="govuk-footer__inline-list">
+                  <li class="govuk-footer__inline-list-item">
+                    <a class="govuk-footer__link" href="/cookies">
+                      Cookies
+                    </a>
+                  </li>
+                  <li class="govuk-footer__inline-list-item">
+                    <a class="govuk-footer__link" href="/accessibility-statement">
+                      Accessibility statement
+                    </a>
+                  </li>
+                  <li class="govuk-footer__inline-list-item">
+                    <a class="govuk-footer__link" href="/design-system">
+                      Design system
+                    </a>
+                  </li>
+              </ul>
+            <div class="govuk-footer__meta-custom">
+              The <a class="govuk-footer__link" href="https://github.com/digital-land/digital-land/">software</a> and <a class="govuk-footer__link" href="https://github.com/digital-land/digital-land/">data</a> used to build these pages is <a class="govuk-footer__link" href="https://github.com/digital-land/digital-land/blob/master/LICENSE">open source</a>.
+            </div>
+        <svg
+          role="presentation"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license"
+          >Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://digital-land.github.io/javascripts/dl-cookies.js"></script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<!-- end google analytics -->
+
+	<script src="https://digital-land.github.io/javascripts/govuk/govuk-frontend.min.js"></script>
+	<script>
+		// initiate all GOVUK components
+		window.GOVUKFrontend.initAll();
+	</script>
+
+	<script src="https://digital-land.github.io/javascripts/dl-frontend.js"></script>
+	<script>
+		// adds any necessary polyfills
+		window.DLFrontend.polyfill();
+	</script>
+
+
+
+
+        <script>
+        // initialise list filter
+        const $form = document.querySelector('[data-filter="form"]');
+        new window.DLFrontend.FilterList($form).init({
+            list_section_selector: '.index-list-wrapper',
+            count_wrapper_selector: '.count-wrapper'
+        })
+        </script>
+
+  </body>
+</html>
