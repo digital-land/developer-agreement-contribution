@@ -122,13 +122,20 @@
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">AWDM/0961/17-AffHousing2</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">organisation
             </dt>
-            <dd class="govuk-summary-list__value">                            </dd>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/ADU" class="govuk-link">Adur District Council</a>
+<span title="Organisation identifier: local-authority-eng:ADU" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:ADU)</span>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">units
+            <dt class="govuk-summary-list__key">developer-agreement
             </dt>
-            <dd class="govuk-summary-list__value">                180            </dd>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/ADU/AWDM-0961-17-s106" class="govuk-link">AWDM/0961/17-s106</a>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2020-02-04            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
@@ -137,36 +144,54 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
+            <dt class="govuk-summary-list__key">units
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/ADU/AWDM-0961-17-s106" class="govuk-link">AWDM/0961/17-s106</a>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/ADU" class="govuk-link">Adur District Council</a>
-<span title="Organisation identifier: local-authority-eng:ADU" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:ADU)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                180            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
             <dd class="govuk-summary-list__value">                2020-02-13            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2020-02-04            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
-            </dt>
-            <dd class="govuk-summary-list__value">                            </dd>
         </div>    
-    </dl>    <footer class="govuk-!-font-size-16 data-record__resource">From resource <a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/e903e4fbe6154cd629d55a171f6d164f5fcdc2b0e49517a0414e54741b55bb86.csv" class="govuk-link">e903e4fbe6154cd62...</a></footer>
-</article>
+    </dl></article>
 </div>
             
 </div>
 
-        </main>
+<a href="https://digital-land.github.io/specification/schema/developer-agreement-contribution/">View the schema for developer-agreement-contribution</a>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9">History</h2>
+<div class="data-table__wrapper" data-module="data-table">
+<div class="data-table-left-shadow with-transition"></div>
+<div class="wide-table">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>entry-date</th>
+                <th>resource</th>
+                <th>line</th>
+                <th>contribution-purpose</th>
+                <th>units</th>
+                <th>developer-agreement-contribution</th>
+                <th>developer-agreement</th>
+                <th>start-date</th>
+                <th>organisation</th>
+            </tr>
+        </thead>
+        <tbody>            <tr>
+                <td>2020-02-13</td>
+                <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/e903e4fbe6154cd629d55a171f6d164f5fcdc2b0e49517a0414e54741b55bb86.csv#L12">e903e4fbe615...</a></td>
+                <td>11</td>
+                    <td>affordable-housing</td> 
+                    <td>180</td> 
+                    <td>AWDM/0961/17-AffHousing2</td> 
+                    <td>AWDM/0961/17-s106</td> 
+                    <td>2020-02-04</td> 
+                    <td>local-authority-eng:ADU</td> 
+            </tr>        </tbody>
+    </table>
+</div>
+<div class="data-table-right-shadow visible with-transition"></div>
+</div>        </main>
       </div>
 
     <div class="dlf-feedback__wrapper">
@@ -259,6 +284,13 @@
 <script>
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const mapComponent = new DLMaps.Map($mapElement).init({})
+</script>
+<script>
+    // Initialise back to top
+    var $data_tables = document.querySelectorAll('[data-module*="data-table"]')
+    $data_tables.forEach(data_table => {
+        new window.DLFrontend.ScrollableTables(data_table).init()
+    })
 </script>
   </body>
 </html>

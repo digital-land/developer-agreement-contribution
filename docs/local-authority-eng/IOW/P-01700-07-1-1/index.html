@@ -126,20 +126,20 @@
             </dt>
             <dd class="govuk-summary-list__value">                150000            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">units
+            <dt class="govuk-summary-list__key">start-date
             </dt>
-            <dd class="govuk-summary-list__value">                            </dd>
+            <dd class="govuk-summary-list__value">                2009-02-13            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/IOW/P-01700-07-1" class="govuk-link">P/01700/07-1</a>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/affordable-housing" class="govuk-link">Affordable housing</a>
 <span title="contribution-purpose identifier: affordable-housing" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>affordable-housing)</span>
 </div>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/IOW/P-01700-07-1" class="govuk-link">P/01700/07-1</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
@@ -151,22 +151,47 @@
             <dt class="govuk-summary-list__key">entry-date
             </dt>
             <dd class="govuk-summary-list__value">                2009-02-13            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2009-02-13            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
-            </dt>
-            <dd class="govuk-summary-list__value">                            </dd>
         </div>    
-    </dl>    <footer class="govuk-!-font-size-16 data-record__resource">From resource <a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/b1a2cea2bf4f2085623c4d282d176b8112b901f623ba71d0168ecc9e5241df2a.csv" class="govuk-link">b1a2cea2bf4f20856...</a></footer>
-</article>
+    </dl></article>
 </div>
             
 </div>
 
-        </main>
+<a href="https://digital-land.github.io/specification/schema/developer-agreement-contribution/">View the schema for developer-agreement-contribution</a>
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9">History</h2>
+<div class="data-table__wrapper" data-module="data-table">
+<div class="data-table-left-shadow with-transition"></div>
+<div class="wide-table">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>entry-date</th>
+                <th>resource</th>
+                <th>line</th>
+                <th>contribution-purpose</th>
+                <th>developer-agreement-contribution</th>
+                <th>developer-agreement</th>
+                <th>start-date</th>
+                <th>organisation</th>
+                <th>amount</th>
+            </tr>
+        </thead>
+        <tbody>            <tr>
+                <td>2009-02-13</td>
+                <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/2a267c32d0febdf7a8f7a4cb6d6f12f0c1f4e38270c78d0a71dfa3eac699c7ee.csv#L250">2a267c32d0fe...</a></td>
+                <td>249</td>
+                    <td>affordable-housing</td> 
+                    <td>P/01700/07-1-1</td> 
+                    <td>P/01700/07-1</td> 
+                    <td>2009-02-13</td> 
+                    <td>local-authority-eng:IOW</td> 
+                    <td>150000</td> 
+            </tr>        </tbody>
+    </table>
+</div>
+<div class="data-table-right-shadow visible with-transition"></div>
+</div>        </main>
       </div>
 
     <div class="dlf-feedback__wrapper">
@@ -259,6 +284,13 @@
 <script>
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const mapComponent = new DLMaps.Map($mapElement).init({})
+</script>
+<script>
+    // Initialise back to top
+    var $data_tables = document.querySelectorAll('[data-module*="data-table"]')
+    $data_tables.forEach(data_table => {
+        new window.DLFrontend.ScrollableTables(data_table).init()
+    })
 </script>
   </body>
 </html>
