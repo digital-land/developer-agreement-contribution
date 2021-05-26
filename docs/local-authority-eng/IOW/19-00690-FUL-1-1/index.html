@@ -130,7 +130,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -146,20 +146,20 @@
 <span title="Organisation identifier: local-authority-eng:IOW" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:IOW)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2020-02-13            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">19/00690/FUL-1-1</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/affordable-housing" class="govuk-link">Affordable housing</a>
 <span title="contribution-purpose identifier: affordable-housing" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>affordable-housing)</span>
 </div>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">19/00690/FUL-1-1</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2020-02-13            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
@@ -193,22 +193,22 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement</th>
             <th>developer-agreement-contribution</th>
+            <th>start-date</th>
+            <th>developer-agreement</th>
             <th>organisation</th>
+            <th>contribution-purpose</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-12-16</td>
-            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/8425926ad5398d76fb1faf382e72c5ecb7cc41a12e3ab7c11460a8aa2411acdc.csv#L38">8425926ad539...</a></td>
+            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/2a267c32d0febdf7a8f7a4cb6d6f12f0c1f4e38270c78d0a71dfa3eac699c7ee.csv#L38">2a267c32d0fe...</a></td>
             <td>37</td>
-                <td>2020-02-13</td> 
-                <td>affordable-housing</td> 
-                <td>19/00690/FUL-1</td> 
                 <td>19/00690/FUL-1-1</td> 
+                <td>2020-02-13</td> 
+                <td>19/00690/FUL-1</td> 
                 <td>local-authority-eng:IOW</td> 
+                <td>affordable-housing</td> 
         </tr>    </tbody>
 </table>
 
@@ -314,8 +314,24 @@
 	</script>
 
 <script>
+    const datasetName = "developer-agreement-contribution"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top

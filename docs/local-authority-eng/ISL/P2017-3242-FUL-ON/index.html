@@ -130,7 +130,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -144,13 +144,13 @@
             </dt>
             <dd class="govuk-summary-list__value">                0            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2020-02-19            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">amount
             </dt>
             <dd class="govuk-summary-list__value">                0            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">P2017/3242/FUL-ON</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
@@ -170,9 +170,9 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            <dt class="govuk-summary-list__key">start-date
             </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">P2017/3242/FUL-ON</span>            </dd>
+            <dd class="govuk-summary-list__value">                2020-02-19            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -201,11 +201,11 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>organisation</th>
-            <th>start-date</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement</th>
             <th>developer-agreement-contribution</th>
+            <th>start-date</th>
+            <th>developer-agreement</th>
+            <th>organisation</th>
+            <th>contribution-purpose</th>
             <th>amount</th>
             <th>units</th>
         </tr>
@@ -214,11 +214,11 @@
             <td>2020-08-05</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/a4158b07dda1a153d640c7ad7d8e6ac95178985e7bf6d96fc31468071c9b159a.csv#L26">a4158b07dda1...</a></td>
             <td>25</td>
-                <td>local-authority-eng:ISL</td> 
-                <td>2020-02-19</td> 
-                <td>other</td> 
-                <td>P2017/3242/FUL-da</td> 
                 <td>P2017/3242/FUL-ON</td> 
+                <td>2020-02-19</td> 
+                <td>P2017/3242/FUL-da</td> 
+                <td>local-authority-eng:ISL</td> 
+                <td>other</td> 
                 <td>0</td> 
                 <td>0</td> 
         </tr>    </tbody>
@@ -326,8 +326,24 @@
 	</script>
 
 <script>
+    const datasetName = "developer-agreement-contribution"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top

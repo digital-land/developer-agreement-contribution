@@ -130,7 +130,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -145,6 +145,10 @@
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/CHT/18-00704-FUL-CIL" class="govuk-link">18/00704/FUL_CIL</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">18/00704/FUL_CIL_59</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/community-infrastructure-levy" class="govuk-link">Community infrastructure levy</a>
@@ -156,19 +160,15 @@
             </dt>
             <dd class="govuk-summary-list__value">                2019-10-24            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                52394.4            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">18/00704/FUL_CIL_59</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/CHT" class="govuk-link">Cheltenham Borough Council</a>
 <span title="Organisation identifier: local-authority-eng:CHT" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:CHT)</span>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                52394.4            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -197,24 +197,24 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement</th>
             <th>developer-agreement-contribution</th>
-            <th>amount</th>
+            <th>start-date</th>
+            <th>developer-agreement</th>
             <th>organisation</th>
+            <th>amount</th>
+            <th>contribution-purpose</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-04-06</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/1185abfc82b22f7964c9db5c45eb0bdc59f880cbf06fe76699ff4f44d413c37e.csv#L20">1185abfc82b2...</a></td>
             <td>19</td>
-                <td>2019-10-24</td> 
-                <td>community-infrastructure-levy</td> 
-                <td>18/00704/FUL_CIL</td> 
                 <td>18/00704/FUL_CIL_59</td> 
-                <td>52394.4</td> 
+                <td>2019-10-24</td> 
+                <td>18/00704/FUL_CIL</td> 
                 <td>local-authority-eng:CHT</td> 
+                <td>52394.4</td> 
+                <td>community-infrastructure-levy</td> 
         </tr>    </tbody>
 </table>
 
@@ -320,8 +320,24 @@
 	</script>
 
 <script>
+    const datasetName = "developer-agreement-contribution"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top
