@@ -140,25 +140,9 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/developer-agreement-contribution/local-authority-eng/CMA/01-17-0669AP2</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">contribution-purpose
-            </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/highways" class="govuk-link">Highways</a>
-<span title="contribution-purpose identifier: highways" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>highways)</span>
-</div>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">01/17/0669AP2</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                55330            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
-            </dt>
-            <dd class="govuk-summary-list__value">01/17/0669AP
-            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -169,6 +153,22 @@
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2019-12-03            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">contribution-purpose
+            </dt>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/highways" class="govuk-link">Highways</a>
+<span title="contribution-purpose identifier: highways" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>highways)</span>
+</div>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                55330            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement
+            </dt>
+            <dd class="govuk-summary-list__value">01/17/0669AP
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -197,24 +197,24 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
+            <th>developer-agreement</th>
             <th>amount</th>
             <th>developer-agreement-contribution</th>
-            <th>developer-agreement</th>
             <th>contribution-purpose</th>
             <th>organisation</th>
+            <th>start-date</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-12-11</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/3eeb367706ed642d8ee96b78eb41b199625e81ba5fbd4df96ffe5c9928964d4b.csv#L8">3eeb367706ed...</a></td>
             <td>7</td>
-                <td>2019-12-03</td> 
+                <td>01/17/0669AP</td> 
                 <td>55330</td> 
                 <td>01/17/0669AP2</td> 
-                <td>01/17/0669AP</td> 
                 <td>highways</td> 
                 <td>local-authority-eng:CMA</td> 
+                <td>2019-12-03</td> 
         </tr>    </tbody>
 </table>
 
@@ -329,7 +329,7 @@
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
             const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
             console.log(url)
             if ($nationalMapLink) {
                 // only show this for the datasets we've added to the national map

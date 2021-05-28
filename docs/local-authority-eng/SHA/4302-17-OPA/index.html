@@ -147,24 +147,24 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">units
+            </dt>
+            <dd class="govuk-summary-list__value">                3            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/SHA" class="govuk-link">South Hams District Council</a>
 <span title="Organisation identifier: local-authority-eng:SHA" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:SHA)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">start-date
             </dt>
-            <dd class="govuk-summary-list__value">                205701            </dd>
+            <dd class="govuk-summary-list__value">                2019-12-17            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/SHA/4302-17-OPA-IFSDA" class="govuk-link">4302/17/OPA-IFSDA</a>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2019-12-17            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
@@ -174,9 +174,9 @@
             </dt>
             <dd class="govuk-summary-list__value">                2019-12-17            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">units
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value">                3            </dd>
+            <dd class="govuk-summary-list__value">                205701            </dd>
         </div>    
     </dl></article>
 </div>
@@ -201,48 +201,48 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
+            <th>developer-agreement</th>
             <th>units</th>
-            <th>start-date</th>
             <th>amount</th>
             <th>developer-agreement-contribution</th>
-            <th>developer-agreement</th>
-            <th>contribution-purpose</th>
             <th>organisation</th>
+            <th>contribution-purpose</th>
+            <th>start-date</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2019-12-17</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L23">6875e66232fd...</a></td>
             <td>22</td>
+                <td>4302/17/OPA-IFSDA</td> 
             <td></td>
-                <td>2019-12-17</td> 
                 <td>205701</td> 
                 <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
+                <td>local-authority-eng:SHA</td> 
                 <td>Affordable Housing - Financial Contribution</td> 
-                <td>local-authority-eng:SHA</td> 
-        </tr>        <tr>
-            <td>2019-12-17</td>
-            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L22">6875e66232fd...</a></td>
-            <td>21</td>
-                <td>3</td> 
                 <td>2019-12-17</td> 
-            <td></td>
-                <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
-                <td>Affordable Housing - Units On Site</td> 
-                <td>local-authority-eng:SHA</td> 
         </tr>        <tr>
             <td>2019-12-17</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L24">6875e66232fd...</a></td>
             <td>23</td>
+                <td>4302/17/OPA-IFSDA</td> 
             <td></td>
-                <td>2019-12-17</td> 
                 <td>19318.5</td> 
                 <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
-                <td>OSSR</td> 
                 <td>local-authority-eng:SHA</td> 
+                <td>OSSR</td> 
+                <td>2019-12-17</td> 
+        </tr>        <tr>
+            <td>2019-12-17</td>
+            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L22">6875e66232fd...</a></td>
+            <td>21</td>
+                <td>4302/17/OPA-IFSDA</td> 
+                <td>3</td> 
+            <td></td>
+                <td>4302/17/OPA</td> 
+                <td>local-authority-eng:SHA</td> 
+                <td>Affordable Housing - Units On Site</td> 
+                <td>2019-12-17</td> 
         </tr>    </tbody>
 </table>
 
@@ -357,7 +357,7 @@
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
             const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
             console.log(url)
             if ($nationalMapLink) {
                 // only show this for the datasets we've added to the national map
