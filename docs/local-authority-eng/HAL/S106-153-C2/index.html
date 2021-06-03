@@ -147,10 +147,6 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">S106-153-C2</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">amount
             </dt>
             <dd class="govuk-summary-list__value">                25353            </dd>
@@ -169,6 +165,10 @@
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/HAL/S106-153" class="govuk-link">S106-153</a>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">S106-153-C2</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -199,10 +199,10 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -211,10 +211,10 @@
             <td>13</td>
                 <td>2010-12-09</td> 
                 <td>25353</td> 
-                <td>highways</td> 
-                <td>S106-153-C2</td> 
-                <td>local-authority-eng:HAL</td> 
                 <td>S106-153</td> 
+                <td>S106-153-C2</td> 
+                <td>highways</td> 
+                <td>local-authority-eng:HAL</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

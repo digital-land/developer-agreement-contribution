@@ -147,13 +147,9 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value">                2020-10-20            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">19/02589/FL_1.1</span>            </dd>
+            <dd class="govuk-summary-list__value">                3068            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -161,13 +157,17 @@
 <span title="Organisation identifier: local-authority-eng:TON" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:TON)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
-            <dd class="govuk-summary-list__value">                3068            </dd>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">19/02589/FL_1.1</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">end-date
             </dt>
             <dd class="govuk-summary-list__value">                2020-11-17            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2020-10-20            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
@@ -203,11 +203,11 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
             <th>end-date</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -216,22 +216,22 @@
             <td>212</td>
                 <td>2020-10-20</td> 
                 <td>3068</td> 
-                <td>open-space-and-leisure</td> 
-                <td>19/02589/FL_1.1</td> 
-                <td>local-authority-eng:TON</td> 
                 <td>19/02589/FL_1</td> 
+                <td>19/02589/FL_1.1</td> 
             <td></td>
+                <td>open-space-and-leisure</td> 
+                <td>local-authority-eng:TON</td> 
         </tr>        <tr>
             <td>2020-10-08</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/9c52d83ae462099106b3bb299719436ffea30556c16ca190897196a2b5c9fdee.csv#L214">9c52d83ae462...</a></td>
             <td>213</td>
                 <td>2020-10-08</td> 
                 <td>3068</td> 
-                <td>open-space-and-leisure</td> 
-                <td>19/02589/FL_1.1</td> 
-                <td>local-authority-eng:TON</td> 
                 <td>19/02589/FL_1</td> 
+                <td>19/02589/FL_1.1</td> 
                 <td>2020-11-17</td> 
+                <td>open-space-and-leisure</td> 
+                <td>local-authority-eng:TON</td> 
         </tr>    </tbody>
 </table>
 
@@ -341,7 +341,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

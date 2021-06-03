@@ -144,11 +144,9 @@
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">4302/17/OPA</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/SHA" class="govuk-link">South Hams District Council</a>
-<span title="Organisation identifier: local-authority-eng:SHA" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:SHA)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                19318.5            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
@@ -157,18 +155,20 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
+            <dt class="govuk-summary-list__key">organisation
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/SHA/4302-17-OPA-IFSDA" class="govuk-link">4302/17/OPA-IFSDA</a>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/SHA" class="govuk-link">South Hams District Council</a>
+<span title="Organisation identifier: local-authority-eng:SHA" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:SHA)</span>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                19318.5            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2019-12-17            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/SHA/4302-17-OPA-IFSDA" class="govuk-link">4302/17/OPA-IFSDA</a>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -203,11 +203,11 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>developer-agreement</th>
-            <th>organisation</th>
             <th>units</th>
+            <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -216,33 +216,33 @@
             <td>23</td>
                 <td>2019-12-17</td> 
                 <td>19318.5</td> 
-                <td>OSSR</td> 
-                <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
-                <td>local-authority-eng:SHA</td> 
             <td></td>
+                <td>4302/17/OPA-IFSDA</td> 
+                <td>4302/17/OPA</td> 
+                <td>OSSR</td> 
+                <td>local-authority-eng:SHA</td> 
         </tr>        <tr>
             <td>2019-12-17</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L22">6875e66232fd...</a></td>
             <td>21</td>
                 <td>2019-12-17</td> 
             <td></td>
-                <td>Affordable Housing - Units On Site</td> 
-                <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
-                <td>local-authority-eng:SHA</td> 
                 <td>3</td> 
+                <td>4302/17/OPA-IFSDA</td> 
+                <td>4302/17/OPA</td> 
+                <td>Affordable Housing - Units On Site</td> 
+                <td>local-authority-eng:SHA</td> 
         </tr>        <tr>
             <td>2019-12-17</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/6875e66232fddb37aac46350f297d36d44dca546a4744199daa002932afa08b0.csv#L23">6875e66232fd...</a></td>
             <td>22</td>
                 <td>2019-12-17</td> 
                 <td>205701</td> 
-                <td>Affordable Housing - Financial Contribution</td> 
-                <td>4302/17/OPA</td> 
-                <td>4302/17/OPA-IFSDA</td> 
-                <td>local-authority-eng:SHA</td> 
             <td></td>
+                <td>4302/17/OPA-IFSDA</td> 
+                <td>4302/17/OPA</td> 
+                <td>Affordable Housing - Financial Contribution</td> 
+                <td>local-authority-eng:SHA</td> 
         </tr>    </tbody>
 </table>
 
@@ -352,7 +352,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

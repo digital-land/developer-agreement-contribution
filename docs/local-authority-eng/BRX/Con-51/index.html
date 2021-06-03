@@ -144,20 +144,16 @@
             </dt>
             <dd class="govuk-summary-list__value">                2019-07-09            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/BRX/07-18-0363-F-da" class="govuk-link">07/18/0363/F-da</a>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/transport" class="govuk-link">Transport</a>
 <span title="contribution-purpose identifier: transport" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>transport)</span>
 </div>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                48300            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/BRX/07-18-0363-F-da" class="govuk-link">07/18/0363/F-da</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
@@ -169,6 +165,10 @@
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/BRX" class="govuk-link">Broxbourne Borough Council</a>
 <span title="Organisation identifier: local-authority-eng:BRX" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:BRX)</span>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                48300            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -199,9 +199,9 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
@@ -211,9 +211,9 @@
             <td>51</td>
                 <td>2019-07-09</td> 
                 <td>48300</td> 
-                <td>transport</td> 
-                <td>Con_51</td> 
                 <td>07/18/0363/F-da</td> 
+                <td>Con_51</td> 
+                <td>transport</td> 
                 <td>local-authority-eng:BRX</td> 
         </tr>    </tbody>
 </table>
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

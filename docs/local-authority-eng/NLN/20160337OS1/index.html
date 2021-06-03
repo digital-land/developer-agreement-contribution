@@ -147,6 +147,14 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                38801            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2017-09-22            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/NLN" class="govuk-link">North Lincolnshire Council</a>
@@ -161,14 +169,6 @@
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">20160337OS1</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2017-09-22            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                38801            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -199,9 +199,9 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
@@ -211,9 +211,9 @@
             <td>74</td>
                 <td>2017-09-22</td> 
                 <td>38801</td> 
-                <td>open-space-and-leisure</td> 
-                <td>20160337OS1</td> 
                 <td>20160337-da</td> 
+                <td>20160337OS1</td> 
+                <td>open-space-and-leisure</td> 
                 <td>local-authority-eng:NLN</td> 
         </tr>    </tbody>
 </table>
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

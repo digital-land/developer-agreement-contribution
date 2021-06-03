@@ -144,25 +144,25 @@
             </dt>
             <dd class="govuk-summary-list__value">                2020-04-16            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">contribution-purpose
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/other" class="govuk-link">Other</a>
-<span title="contribution-purpose identifier: other" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>other)</span>
-</div>
-            </dd>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">20/00059/FUL-1-2</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                653            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/IOW/20-00059-FUL-1" class="govuk-link">20/00059/FUL-1</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
-            <dd class="govuk-summary-list__value">                653            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">20/00059/FUL-1-2</span>            </dd>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/other" class="govuk-link">Other</a>
+<span title="contribution-purpose identifier: other" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>other)</span>
+</div>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -197,23 +197,23 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
+            <th>start-date</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-12-22</td>
-            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/cc479bc1cbdc78292a07738c3182f29bd904329cf949d8dfe1077cd7f3ce942b.csv#L102">cc479bc1cbdc...</a></td>
+            <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/8425926ad5398d76fb1faf382e72c5ecb7cc41a12e3ab7c11460a8aa2411acdc.csv#L102">8425926ad539...</a></td>
             <td>101</td>
-                <td>2020-04-16</td> 
                 <td>653</td> 
-                <td>other</td> 
-                <td>20/00059/FUL-1-2</td> 
+                <td>2020-04-16</td> 
                 <td>20/00059/FUL-1</td> 
+                <td>20/00059/FUL-1-2</td> 
+                <td>other</td> 
                 <td>local-authority-eng:IOW</td> 
         </tr>    </tbody>
 </table>
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

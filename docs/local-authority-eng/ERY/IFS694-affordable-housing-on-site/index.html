@@ -144,19 +144,9 @@
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">IFS694/affordable-housing_on-site</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value">                2020-02-24            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">units
-            </dt>
-            <dd class="govuk-summary-list__value">                80            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/ERY" class="govuk-link">East Riding of Yorkshire Council</a>
-<span title="Organisation identifier: local-authority-eng:ERY" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:ERY)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                0            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
@@ -170,9 +160,19 @@
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/ERY/IFS694" class="govuk-link">IFS694</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">units
             </dt>
-            <dd class="govuk-summary-list__value">                0            </dd>
+            <dd class="govuk-summary-list__value">                80            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2020-02-24            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">organisation
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/ERY" class="govuk-link">East Riding of Yorkshire Council</a>
+<span title="Organisation identifier: local-authority-eng:ERY" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:ERY)</span>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -201,26 +201,26 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
-            <th>developer-agreement</th>
             <th>units</th>
+            <th>start-date</th>
+            <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-12-31</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/c00186b3bc331dcfdaea2fcae30f437f7cab5bc1de08aa1c95d4ec8b7ee87621.csv#L146">c00186b3bc33...</a></td>
             <td>145</td>
-                <td>2020-02-24</td> 
                 <td>0</td> 
-                <td>affordable-housing</td> 
-                <td>IFS694/affordable-housing_on-site</td> 
-                <td>local-authority-eng:ERY</td> 
-                <td>IFS694</td> 
                 <td>80</td> 
+                <td>2020-02-24</td> 
+                <td>IFS694</td> 
+                <td>IFS694/affordable-housing_on-site</td> 
+                <td>affordable-housing</td> 
+                <td>local-authority-eng:ERY</td> 
         </tr>    </tbody>
 </table>
 
@@ -330,7 +330,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

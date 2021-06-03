@@ -145,19 +145,13 @@
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/developer-agreement/SLF/397-17-69345-FUL-da" class="govuk-link">397-17/69345/FUL-da</a>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/SLF" class="govuk-link">Salford City Council</a>
-<span title="Organisation identifier: local-authority-eng:SLF" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:SLF)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                781500            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2019-12-06            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                781500            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
@@ -168,6 +162,12 @@
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/green-infrastructure" class="govuk-link">Green infrastructure</a>
 <span title="contribution-purpose identifier: green-infrastructure" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>green-infrastructure)</span>
 </div>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">organisation
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/SLF" class="govuk-link">Salford City Council</a>
+<span title="Organisation identifier: local-authority-eng:SLF" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:SLF)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
@@ -199,10 +199,10 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -211,10 +211,10 @@
             <td>36</td>
                 <td>2019-12-06</td> 
                 <td>781500</td> 
-                <td>green-infrastructure</td> 
-                <td>397-17/69345/FUL-da-pr</td> 
-                <td>local-authority-eng:SLF</td> 
                 <td>397-17/69345/FUL-da</td> 
+                <td>397-17/69345/FUL-da-pr</td> 
+                <td>green-infrastructure</td> 
+                <td>local-authority-eng:SLF</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

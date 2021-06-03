@@ -158,13 +158,13 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">IFS654/open-space-and-leisure_on-site</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2019-04-04            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">IFS654/open-space-and-leisure_on-site</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">amount
             </dt>
@@ -199,9 +199,9 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
@@ -211,9 +211,9 @@
             <td>37</td>
                 <td>2019-04-04</td> 
                 <td>7344</td> 
-                <td>open-space-and-leisure</td> 
-                <td>IFS654/open-space-and-leisure_on-site</td> 
                 <td>IFS654</td> 
+                <td>IFS654/open-space-and-leisure_on-site</td> 
+                <td>open-space-and-leisure</td> 
                 <td>local-authority-eng:ERY</td> 
         </tr>    </tbody>
 </table>
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

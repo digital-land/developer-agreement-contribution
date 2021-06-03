@@ -145,9 +145,9 @@
             <dd class="govuk-summary-list__value">15/00691/FUL-da
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
-            <dd class="govuk-summary-list__value">                5000            </dd>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">15/00691/FUL-S2.A.1</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -162,13 +162,13 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">15/00691/FUL-S2.A.1</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2017-12-07            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                5000            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -199,10 +199,10 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -211,10 +211,10 @@
             <td>363</td>
                 <td>2017-12-07</td> 
                 <td>5000</td> 
-                <td>transport-and-travel</td> 
-                <td>15/00691/FUL-S2.A.1</td> 
-                <td>local-authority-eng:SND</td> 
                 <td>15/00691/FUL-da</td> 
+                <td>15/00691/FUL-S2.A.1</td> 
+                <td>transport-and-travel</td> 
+                <td>local-authority-eng:SND</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

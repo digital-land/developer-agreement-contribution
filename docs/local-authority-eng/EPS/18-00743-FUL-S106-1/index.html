@@ -140,9 +140,11 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/developer-agreement-contribution/local-authority-eng/EPS/18-00743-FUL-S106-1</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
+            <dt class="govuk-summary-list__key">organisation
             </dt>
-            <dd class="govuk-summary-list__value">                2019-07-16            </dd>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/EPS" class="govuk-link">Epsom and Ewell Borough Council</a>
+<span title="Organisation identifier: local-authority-eng:EPS" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:EPS)</span>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
@@ -151,11 +153,13 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/EPS" class="govuk-link">Epsom and Ewell Borough Council</a>
-<span title="Organisation identifier: local-authority-eng:EPS" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:EPS)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                144934            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2019-07-16            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
@@ -165,10 +169,6 @@
             </dt>
             <dd class="govuk-summary-list__value">18/00743/FUL/S106
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                144934            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -197,24 +197,24 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
+            <th>start-date</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2019-09-25</td>
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/08711612fcde44985ba344127826cadf611dacf65716c3f6ca8b97b8cb8db07e.csv#L20">08711612fcde...</a></td>
             <td>19</td>
-                <td>2019-07-16</td> 
                 <td>144934</td> 
-                <td>Initial off -site- affordable- housing -contribution</td> 
-                <td>18/00743/FUL/S106 1</td> 
-                <td>local-authority-eng:EPS</td> 
+                <td>2019-07-16</td> 
                 <td>18/00743/FUL/S106</td> 
+                <td>18/00743/FUL/S106 1</td> 
+                <td>Initial off -site- affordable- housing -contribution</td> 
+                <td>local-authority-eng:EPS</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

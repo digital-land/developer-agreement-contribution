@@ -144,9 +144,20 @@
             </dt>
             <dd class="govuk-summary-list__value">                382200            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement-contribution
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">17/01595/OAEA_2.24</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement
             </dt>
             <dd class="govuk-summary-list__value">17/01595/OAEA_2
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">contribution-purpose
+            </dt>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/transport-and-travel" class="govuk-link">Transport and travel</a>
+<span title="contribution-purpose identifier: transport-and-travel" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>transport-and-travel)</span>
+</div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
@@ -157,17 +168,6 @@
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/organisation/local-authority-eng/TON" class="govuk-link">Tonbridge and Malling Borough Council</a>
 <span title="Organisation identifier: local-authority-eng:TON" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:TON)</span>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement-contribution
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">17/01595/OAEA_2.24</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">contribution-purpose
-            </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/transport-and-travel" class="govuk-link">Transport and travel</a>
-<span title="contribution-purpose identifier: transport-and-travel" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>transport-and-travel)</span>
-</div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
@@ -199,10 +199,10 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -211,10 +211,10 @@
             <td>24</td>
                 <td>2020-08-05</td> 
                 <td>382200</td> 
-                <td>transport-and-travel</td> 
-                <td>17/01595/OAEA_2.24</td> 
-                <td>local-authority-eng:TON</td> 
                 <td>17/01595/OAEA_2</td> 
+                <td>17/01595/OAEA_2.24</td> 
+                <td>transport-and-travel</td> 
+                <td>local-authority-eng:TON</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

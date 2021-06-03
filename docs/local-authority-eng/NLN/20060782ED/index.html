@@ -146,28 +146,28 @@
 <span title="Organisation identifier: local-authority-eng:NLN" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:NLN)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">contribution-purpose
+            <dt class="govuk-summary-list__key">amount
             </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/education" class="govuk-link">Education</a>
-<span title="contribution-purpose identifier: education" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>education)</span>
-</div>
-            </dd>
+            <dd class="govuk-summary-list__value">                198720            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">20060782ED</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">developer-agreement
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/NLN/20060782-da" class="govuk-link">20060782-da</a>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2007-01-30            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
+            <dt class="govuk-summary-list__key">contribution-purpose
             </dt>
-            <dd class="govuk-summary-list__value">                198720            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/local-authority-eng/NLN/20060782-da" class="govuk-link">20060782-da</a>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/education" class="govuk-link">Education</a>
+<span title="contribution-purpose identifier: education" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>education)</span>
+</div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
@@ -199,10 +199,10 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -211,10 +211,10 @@
             <td>8</td>
                 <td>2007-01-30</td> 
                 <td>198720</td> 
-                <td>education</td> 
-                <td>20060782ED</td> 
-                <td>local-authority-eng:NLN</td> 
                 <td>20060782-da</td> 
+                <td>20060782ED</td> 
+                <td>education</td> 
+                <td>local-authority-eng:NLN</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

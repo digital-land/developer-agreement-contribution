@@ -199,9 +199,9 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
@@ -211,9 +211,9 @@
             <td>9</td>
                 <td>2019-04-10</td> 
                 <td>3100</td> 
-                <td>monitoring-fees</td> 
-                <td>3_17_1222_VAR-c5</td> 
                 <td>3_17_1222_VAR-da</td> 
+                <td>3_17_1222_VAR-c5</td> 
+                <td>monitoring-fees</td> 
                 <td>local-authority-eng:EHE</td> 
         </tr>        <tr>
             <td>2021-03-25</td>
@@ -221,9 +221,9 @@
             <td>8</td>
                 <td>2019-04-10</td> 
                 <td>936</td> 
-                <td>community-facilities</td> 
-                <td>3_17_1222_VAR-c5</td> 
                 <td>3_17_1222_VAR-da</td> 
+                <td>3_17_1222_VAR-c5</td> 
+                <td>community-facilities</td> 
                 <td>local-authority-eng:EHE</td> 
         </tr>    </tbody>
 </table>
@@ -334,7 +334,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

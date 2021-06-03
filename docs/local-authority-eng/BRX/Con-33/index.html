@@ -158,13 +158,13 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2019-07-26            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">Con_33</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2019-07-26            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">units
             </dt>
@@ -198,11 +198,11 @@
             <th>resource</th>
             <th>line</th>
             <th>start-date</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
-            <th>organisation</th>
-            <th>developer-agreement</th>
             <th>units</th>
+            <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
+            <th>organisation</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -210,11 +210,11 @@
             <td><a href="https://github.com/digital-land/developer-agreement-contribution-collection/tree/main/transformed/developer-agreement-contribution/8f9747e53a2edbc5da5ecd95b90dca06a644a72ea346d12cc690057e79e1caac.csv#L34">8f9747e53a2e...</a></td>
             <td>33</td>
                 <td>2019-07-26</td> 
-                <td>affordable-housing</td> 
-                <td>Con_33</td> 
-                <td>local-authority-eng:BRX</td> 
-                <td>07/18/0461/O-da</td> 
                 <td>185</td> 
+                <td>07/18/0461/O-da</td> 
+                <td>Con_33</td> 
+                <td>affordable-housing</td> 
+                <td>local-authority-eng:BRX</td> 
         </tr>    </tbody>
 </table>
 
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

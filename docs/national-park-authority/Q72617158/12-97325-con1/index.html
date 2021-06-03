@@ -140,16 +140,10 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/developer-agreement-contribution/national-park-authority/Q72617158/12-97325-con1</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">contribution-purpose
+            <dt class="govuk-summary-list__key">developer-agreement
             </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/affordable-housing" class="govuk-link">Affordable housing</a>
-<span title="contribution-purpose identifier: affordable-housing" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>affordable-housing)</span>
-</div>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/national-park-authority/Q72617158/12-97325-da" class="govuk-link">12/97325-da</a>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">amount
-            </dt>
-            <dd class="govuk-summary-list__value">                53000            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -157,18 +151,24 @@
 <span title="Organisation identifier: national-park-authority:Q72617158" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>national-park-authority:Q72617158)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">developer-agreement
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/developer-agreement/national-park-authority/Q72617158/12-97325-da" class="govuk-link">12/97325-da</a>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">developer-agreement-contribution
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">12/97325-con1</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">contribution-purpose
+            </dt>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/contribution-purpose/affordable-housing" class="govuk-link">Affordable housing</a>
+<span title="contribution-purpose identifier: affordable-housing" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">contribution-purpose identifier is </span>affordable-housing)</span>
+</div>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2012-08-08            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">amount
+            </dt>
+            <dd class="govuk-summary-list__value">                53000            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -199,9 +199,9 @@
             <th>line</th>
             <th>start-date</th>
             <th>amount</th>
-            <th>contribution-purpose</th>
-            <th>developer-agreement-contribution</th>
             <th>developer-agreement</th>
+            <th>developer-agreement-contribution</th>
+            <th>contribution-purpose</th>
             <th>organisation</th>
         </tr>
     </thead>
@@ -211,9 +211,9 @@
             <td>12</td>
                 <td>2012-08-08</td> 
                 <td>53000</td> 
-                <td>affordable-housing</td> 
-                <td>12/97325-con1</td> 
                 <td>12/97325-da</td> 
+                <td>12/97325-con1</td> 
+                <td>affordable-housing</td> 
                 <td>national-park-authority:Q72617158</td> 
         </tr>    </tbody>
 </table>
@@ -324,7 +324,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
